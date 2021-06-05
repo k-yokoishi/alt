@@ -20,6 +20,14 @@
         >
           GitHub
         </a>
+        <a
+          href="https://github.com/k-yokoishi/alt"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="button--grey"
+        >
+          alt
+        </a>
       </div>
     </div>
   </div>

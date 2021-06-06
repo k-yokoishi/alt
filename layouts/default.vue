@@ -1,6 +1,9 @@
 <template>
   <div>
-    <Nuxt />
+    <GlobalHeader />
+    <main>
+      <Nuxt />
+    </main>
   </div>
 </template>
 
@@ -53,3 +56,9 @@ html {
   background-color: #35495e;
 }
 </style>
+<script>
+import GlobalHeader from '../components/AltGlobalHeader'
+export default {
+  components: { GlobalHeader },
+}
+</script>

@@ -20,14 +20,6 @@
         >
           GitHub
         </a>
-        <a
-          href="https://github.com/k-yokoishi/alt"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          alt
-        </a>
       </div>
     </div>
   </div>
@@ -36,7 +28,11 @@
 <script lang="ts">
 import Vue from 'vue'
 
-export default Vue.extend({})
+export default Vue.extend({
+  head: {
+    title: 'トップ',
+  },
+})
 </script>
 
 <style>
@@ -50,8 +46,8 @@ export default Vue.extend({})
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
   text-align: center;
+  padding-top: 48px;
 }
 
 .title {

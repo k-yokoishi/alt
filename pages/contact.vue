@@ -77,7 +77,7 @@ export default Vue.extend({
   methods: {
     handleLoadIframe() {
       if (this.submitted) {
-        window.location = '/thanx'
+        window.location.href = '/thanx'
       }
     },
     handleSubmit() {

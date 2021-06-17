@@ -10,9 +10,7 @@ module.exports = {
         '"Yu Gothic"',
         'sans-serif',
       ],
-      sans: [
-        '"Josefin Sans"'
-      ]
+      sans: ['"Josefin Sans"'],
     },
     colors: {
       black: {
@@ -35,7 +33,8 @@ module.exports = {
         sm: '8px',
         md: '16px',
         lg: '24px',
-        xl: '48px',
+        xl: '32px',
+        '2xl': '40px',
       },
     },
   },

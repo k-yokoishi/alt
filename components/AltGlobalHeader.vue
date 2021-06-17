@@ -4,13 +4,14 @@
       <div class="flex justify-between items-center">
         <div class="global-header-log">
           <NuxtLink to="/">
-            <img src="../assets/logo.svg" />
+            <img src="../assets/logo.svg" alt="alt." />
           </NuxtLink>
         </div>
         <nav>
-          <ul class="flex items-center">
+          <ul class="flex items-center font-sans">
             <li v-for="nav in navs" :key="nav.to" class="mx-6">
-              <NuxtLink :to="nav.to">{{ nav.label }}</NuxtLink>
+              <!--              <NuxtLink :to="nav.to">{{ nav.label }}</NuxtLink>-->
+              <alt-link :to="nav.to">{{ nav.label }}</alt-link>
             </li>
             <li class="mx-2">
               <AltButton to="/contact" rounded>CONTACT</AltButton>
@@ -25,9 +26,10 @@
 <script lang="ts">
 import Vue from 'vue'
 import AltButton from '~/components/AltButton.vue'
+import AltLink from '~/components/AltLink.vue'
 
 export default Vue.extend({
-  components: { AltButton },
+  components: { AltLink, AltButton },
   data() {
     return {
       navs: [

@@ -1,18 +1,13 @@
 <template>
   <div>
-    <div class="mv">
-      <div class="mv__graphics">
-        <div class="mv__graphicImage">
-          <img src="../assets/images/mv_graphic_01.png" alt="" />
-        </div>
-        <div class="mv__graphicImage">
-          <img src="../assets/images/mv_graphic_02.png" alt="" />
-        </div>
-        <div class="mv__graphicImage">
-          <img src="../assets/images/mv_graphic_03.png" alt="" />
-        </div>
-        <div class="mv__graphicImage">
-          <img src="../assets/images/mv_graphic_04.png" alt="" />
+    <div class="mv relative overflow-hidden">
+      <div class="mv__graphics w-full max-w-screen-sm absolute top-xl right-xl">
+        <div
+          v-for="graphic in graphicImageSrc"
+          :key="graphic"
+          class="mv__graphicImage"
+        >
+          <img :src="graphic" alt="" />
         </div>
       </div>
       <div class="mv__inner">
@@ -51,6 +46,12 @@ export default Vue.extend({
   data() {
     return {
       rotateDeg: 0,
+      graphicImageSrc: [
+        require('../assets/images/mv_graphic_01.png'),
+        require('../assets/images/mv_graphic_02.png'),
+        require('../assets/images/mv_graphic_03.png'),
+        require('../assets/images/mv_graphic_04.png'),
+      ],
     }
   },
   head: {
@@ -73,26 +74,12 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  padding-top: 48px;
-}
-
 .mv {
-  position: relative;
-  overflow: hidden;
   &__inner {
-    position: relative;
     min-height: 640px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     margin-left: 90px;
     margin-right: 90px;
+    @apply relative flex flex-col justify-center;
   }
 
   &__catch {
@@ -101,27 +88,19 @@ export default Vue.extend({
   &__catchLead {
     font-size: 20px;
   }
-  &__graphics {
-    position: absolute;
-    top: 0;
-    right: 0;
-    max-width: 640px;
-    width: 100%;
-  }
   &__graphicImage {
-    position: absolute;
     animation-name: rotateAndAppear;
     animation-duration: 10s;
-    animation-timing-function: linear;
     animation-iteration-count: infinite;
+    @apply absolute blur-xl ease-linear;
     &:nth-child(2) {
-      animation-delay: 2.5s;
+      animation-delay: -2.5s;
     }
     &:nth-child(3) {
-      animation-delay: 5s;
+      animation-delay: -5s;
     }
     &:nth-child(4) {
-      animation-delay: 7.5s;
+      animation-delay: -7.5s;
     }
   }
 }

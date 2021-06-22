@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="mv relative overflow-hidden">
-      <div class="mv__graphics w-full max-w-screen-sm absolute top-xl right-xl">
+      <div class="mv__graphics w-full max-w-[616px] absolute top-xl right-xl">
         <div
           v-for="graphic in graphicImageSrc"
           :key="graphic"
@@ -18,11 +18,21 @@
           Direction / UI Design / Web Design / Development
         </div>
         <div class="mv__linkToAbout mt-2xl">
-          <alt-link to="/about" underline arrow size="lg">ABOUT US</alt-link>
+          <alt-link to="/about" underline arrow size="xl">
+            <span class="font-sans">ABOUT US</span>
+          </alt-link>
         </div>
         <div class="scrollDown">
           <div class="scrollDown__arrowWrapper">
-            <i class="scrollDown__arrow" />
+            <i
+              class="
+                scrollDown__arrow
+                absolute
+                top-1/2
+                left-1/2
+                translate-x-1/2 translate-y-1/2
+              "
+            />
           </div>
           <img
             class="scrollDown__circle"
@@ -33,7 +43,61 @@
         </div>
       </div>
     </div>
-    <div style="height: 640px"></div>
+    <alt-section title="私たちができること" sub-title="SERVICE">
+      <div class="max-w-5xl w-full mx-auto">
+        <ul class="flex justify-between">
+          <li v-for="service in services" :key="service.title">
+            <div class="flex flex-col items-center max-w-[315px]">
+              <figure class="height-[160px] w-auto">
+                <img :src="service.iconSrc" alt="" />
+              </figure>
+              <dl class="mt-lg">
+                <dt class="text-2xl font-bold text-center">
+                  {{ service.title }}
+                </dt>
+                <dd class="mt-md leading-[26px]">{{ service.description }}</dd>
+              </dl>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="mt-2xl text-center">
+        <alt-link arrow underline size="xl" to="/">
+          <span class="font-sans">VIEW MORE</span>
+        </alt-link>
+      </div>
+    </alt-section>
+    <alt-section title="制作事例" sub-title="WORKS">
+      <div class="relative">
+        <div class="max-w-5xl mx-auto">
+          <ul class="flex justify-between">
+            <li>
+              <div class="max-w-[472px] min-w-[472px] w-full">
+                <div class="max-w-[472px] min-h-[292px] bg-gray rounded" />
+                <dl class="mt-lg">
+                  <dt class="text-xl">お取り寄せタウン</dt>
+                  <dd class="mt-md font-sans text-gray">Service site</dd>
+                </dl>
+              </div>
+            </li>
+            <li class="mt-2xl">
+              <div class="max-w-[472px] min-w-[472px] w-full">
+                <div class="max-w-[472px] min-h-[292px] bg-gray rounded" />
+                <dl class="mt-lg">
+                  <dt class="text-xl">alt.</dt>
+                  <dd class="mt-md font-sans text-gray">Portfolio site</dd>
+                </dl>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-2xl text-center">
+        <alt-link arrow underline size="xl" to="/">
+          <span class="font-sans">VIEW MORE</span>
+        </alt-link>
+      </div>
+    </alt-section>
   </div>
 </template>
 
@@ -51,6 +115,26 @@ export default Vue.extend({
         require('../assets/images/mv_graphic_02.png'),
         require('../assets/images/mv_graphic_03.png'),
         require('../assets/images/mv_graphic_04.png'),
+      ],
+      services: [
+        {
+          title: 'ディレクション',
+          description:
+            'Webサイト全体の構成・設計をおこなうにあたり、お客様のご要望や課題をヒアリングいたします。ヒアリング内容を元にWebサイトの土台となる目的を明確にしたうえで最適なプランニングをご提案します。',
+          iconSrc: require('../assets/images/icon_direction.png'),
+        },
+        {
+          title: 'デザイン',
+          description:
+            '「売上を上げたい」「サービスのイメージアップをしたい」などお客様のご要望をお伺いした上で、Webサイトの目的が実現できるデザインをご提案します',
+          iconSrc: require('../assets/images/icon_design.png'),
+        },
+        {
+          title: '開発実装',
+          description:
+            'HTML・CSS・Javascriptを使い動きのあるデザインを実現します。見た目の美しさだけでなく、長期的に運用することを見据えたメンテナンスのしやすいコードにこだわります。',
+          iconSrc: require('../assets/images/icon_program.png'),
+        },
       ],
     }
   },
@@ -76,7 +160,7 @@ export default Vue.extend({
 <style lang="scss">
 .mv {
   &__inner {
-    min-height: 640px;
+    min-height: 712px;
     margin-left: 90px;
     margin-right: 90px;
     @apply relative flex flex-col justify-center;
@@ -92,7 +176,8 @@ export default Vue.extend({
     animation-name: rotateAndAppear;
     animation-duration: 10s;
     animation-iteration-count: infinite;
-    @apply absolute blur-xl ease-linear;
+    animation-timing-function: linear;
+    @apply absolute blur-xl;
     &:nth-child(2) {
       animation-delay: -2.5s;
     }
@@ -130,16 +215,11 @@ export default Vue.extend({
 
 .scrollDown {
   position: absolute;
-  bottom: 0;
+  bottom: 72px;
   right: 0;
   max-width: 160px;
 
   &__arrow {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
     &::before {
       content: '';
       position: absolute;

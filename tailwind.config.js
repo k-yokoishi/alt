@@ -27,6 +27,7 @@ module.exports = {
     backgroundColor: {
       gray: '#E5E5E5',
       black: '#1A2C44',
+      base: '#F4F7F6',
     },
     extend: {
       spacing: {

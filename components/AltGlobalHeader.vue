@@ -10,11 +10,10 @@
         <nav>
           <ul class="flex items-center font-sans">
             <li v-for="nav in navs" :key="nav.to" class="mx-6">
-              <!--              <NuxtLink :to="nav.to">{{ nav.label }}</NuxtLink>-->
               <alt-link :to="nav.to">{{ nav.label }}</alt-link>
             </li>
             <li class="mx-2">
-              <AltButton to="/contact" rounded>CONTACT</AltButton>
+              <alt-button to="/contact" rounded>CONTACT</alt-button>
             </li>
           </ul>
         </nav>
@@ -44,10 +43,6 @@ export default Vue.extend({
         {
           label: 'WORKS',
           to: '/works',
-        },
-        {
-          label: 'NEWS',
-          to: '/news',
         },
       ],
     }

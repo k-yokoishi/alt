@@ -1,21 +1,23 @@
 <template>
   <div>
-    <GlobalHeader />
+    <alt-global-header />
     <main>
       <Nuxt />
     </main>
+    <alt-global-footer />
   </div>
 </template>
 
 <style>
 body {
-  @apply font-body text-black;
+  @apply font-body text-black bg-base overflow-x-hidden;
 }
 </style>
 
 <script>
-import GlobalHeader from '../components/AltGlobalHeader'
+import AltGlobalFooter from '@/components/AltGlobalFooter'
+import AltGlobalHeader from '../components/AltGlobalHeader'
 export default {
-  components: { GlobalHeader },
+  components: { AltGlobalHeader, AltGlobalFooter },
 }
 </script>

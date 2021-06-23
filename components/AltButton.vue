@@ -40,7 +40,7 @@ export default Vue.extend({
 
 <style scoped lang="scss">
 .button {
-  @apply py-md text-white bg-black rounded w-40 block text-center hover:opacity-80 duration-100;
+  @apply py-md px-xl text-white bg-black rounded block text-center hover:opacity-80 duration-100;
 
   &.rounded {
     @apply rounded-full;

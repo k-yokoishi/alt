@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="pb-[80px]">
     <div class="mv relative overflow-hidden">
       <div class="mv__graphics w-full max-w-[616px] absolute top-xl right-xl">
         <div
@@ -11,7 +11,7 @@
         </div>
       </div>
       <div class="mv__inner">
-        <p class="mv__catch">
+        <p class="text-[44px] font-bold leading-[70px]">
           私たちは設計・デザイン・実装まで<br />夫婦でおこなうWeb制作チームです。
         </p>
         <div class="mv__catchLead mt-lg text-sm text-gray font-sans">
@@ -69,28 +69,41 @@
     </alt-section>
     <alt-section title="制作事例" sub-title="WORKS">
       <div class="relative">
-        <div class="max-w-5xl mx-auto">
-          <ul class="flex justify-between">
-            <li>
-              <div class="max-w-[472px] min-w-[472px] w-full">
-                <div class="max-w-[472px] min-h-[292px] bg-gray rounded" />
-                <dl class="mt-lg">
-                  <dt class="text-xl">お取り寄せタウン</dt>
-                  <dd class="mt-md font-sans text-gray">Service site</dd>
-                </dl>
-              </div>
-            </li>
-            <li class="mt-2xl">
-              <div class="max-w-[472px] min-w-[472px] w-full">
-                <div class="max-w-[472px] min-h-[292px] bg-gray rounded" />
-                <dl class="mt-lg">
-                  <dt class="text-xl">alt.</dt>
-                  <dd class="mt-md font-sans text-gray">Portfolio site</dd>
-                </dl>
-              </div>
-            </li>
-          </ul>
+        <div
+          class="
+            sectionWorks__bg
+            font-bold
+            absolute
+            -top-16
+            right-0
+            text-white text-[160px]
+            whitespace-nowrap
+          "
+        >
+          FEATURED WORKS
         </div>
+      </div>
+      <div class="max-w-5xl pt-14 mx-auto">
+        <ul class="flex justify-between">
+          <li>
+            <div class="max-w-[472px] min-w-[472px] w-full">
+              <div class="max-w-[472px] min-h-[292px] bg-gray rounded" />
+              <dl class="mt-lg">
+                <dt class="text-xl">お取り寄せタウン</dt>
+                <dd class="mt-md font-sans text-gray">Service site</dd>
+              </dl>
+            </div>
+          </li>
+          <li class="mt-2xl">
+            <div class="max-w-[472px] min-w-[472px] w-full">
+              <div class="max-w-[472px] min-h-[292px] bg-gray rounded" />
+              <dl class="mt-lg">
+                <dt class="text-xl">alt.</dt>
+                <dd class="mt-md font-sans text-gray">Portfolio site</dd>
+              </dl>
+            </div>
+          </li>
+        </ul>
       </div>
       <div class="mt-2xl text-center">
         <alt-link arrow underline size="xl" to="/">
@@ -98,6 +111,45 @@
         </alt-link>
       </div>
     </alt-section>
+    <section
+      ref="sectionContact"
+      class="sectionContact mt-[172px] mx-[90px] rounded-xl relative"
+    >
+      <div class="absolute -top-16 left-24">
+        <div class="relative w-40 h-40">
+          <div class="absolute">
+            <img src="../assets/images/contact_airplane_circle.png" alt="" />
+          </div>
+          <div
+            class="
+              sectionContact__airplane
+              absolute
+              top-1/2
+              left-1/2
+              transform
+              -translate-x-1/2 -translate-y-1/2
+            "
+            :class="{ planeLanded }"
+          >
+            <img src="../assets/images/contact_airplane.png" alt="" />
+          </div>
+        </div>
+      </div>
+      <div class="py-[64px] text-center">
+        <header class="font-sans text-[32px]">
+          <h2>CONTACT</h2>
+        </header>
+        <main class="mt-md">
+          <p>
+            Web制作やクリエイティブに関するお困りごとがあれば<br />
+            まずはお気軽にお問い合わせください。
+          </p>
+        </main>
+        <footer class="mt-lg flex justify-center">
+          <alt-button rounded>お問い合わせはこちら</alt-button>
+        </footer>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -110,6 +162,7 @@ export default Vue.extend({
   data() {
     return {
       rotateDeg: 0,
+      planeLanded: false,
       graphicImageSrc: [
         require('../assets/images/mv_graphic_01.png'),
         require('../assets/images/mv_graphic_02.png'),
@@ -150,8 +203,14 @@ export default Vue.extend({
     },
   },
   mounted() {
+    const sectionContactRect = this.$refs.sectionContact as HTMLElement
+    const rect = sectionContactRect.getBoundingClientRect()
+
     window.addEventListener('scroll', () => {
-      this.rotateDeg = document.body.getClientRects()[0].top * -0.6
+      this.rotateDeg = window.pageYOffset * -0.25
+      if (window.pageYOffset + window.innerHeight > rect.top + rect.height) {
+        this.planeLanded = true
+      }
     })
   },
 })
@@ -166,9 +225,6 @@ export default Vue.extend({
     @apply relative flex flex-col justify-center;
   }
 
-  &__catch {
-    font-size: 44px;
-  }
   &__catchLead {
     font-size: 20px;
   }
@@ -246,7 +302,36 @@ export default Vue.extend({
 
   &__circle {
     width: 100%;
-    transition: 100ms ease-in-out;
+    transition: 75ms cubic-bezier(0.2, 0, 0.8, 1);
+  }
+}
+.sectionWorks__bg {
+  z-index: -1;
+  transform: translateX(100%);
+  animation-name: fadeInOut;
+  animation-duration: 40s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@keyframes fadeInOut {
+  from {
+    transform: translateX(100%);
+    right: 0;
+  }
+  to {
+    transform: translateX(0);
+    right: 100vw;
+  }
+}
+.sectionContact {
+  background: url('assets/images/contact_section_bg.png') no-repeat center;
+  background-size: cover;
+
+  &__airplane {
+    transition-duration: 300ms;
+    &.planeLanded {
+      transform: translate(124px, -156px);
+    }
   }
 }
 </style>

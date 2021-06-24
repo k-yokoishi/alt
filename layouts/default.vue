@@ -8,12 +8,6 @@
   </div>
 </template>
 
-<style>
-body {
-  @apply font-body text-black bg-base overflow-x-hidden;
-}
-</style>
-
 <script>
 import AltGlobalFooter from '@/components/AltGlobalFooter'
 import AltGlobalHeader from '../components/AltGlobalHeader'
@@ -21,3 +15,9 @@ export default {
   components: { AltGlobalHeader, AltGlobalFooter },
 }
 </script>
+
+<style>
+body {
+  @apply font-body text-black bg-base;
+}
+</style>

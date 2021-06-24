@@ -67,7 +67,7 @@
         </alt-link>
       </div>
     </alt-section>
-    <alt-section title="制作事例" sub-title="WORKS">
+    <alt-section title="制作事例" sub-title="WORKS" class="overflow-hidden">
       <div class="relative">
         <div
           class="
@@ -82,28 +82,28 @@
         >
           FEATURED WORKS
         </div>
-      </div>
-      <div class="max-w-5xl pt-14 mx-auto">
-        <ul class="flex justify-between">
-          <li>
-            <div class="max-w-[472px] min-w-[472px] w-full">
-              <div class="max-w-[472px] min-h-[292px] bg-gray rounded" />
-              <dl class="mt-lg">
-                <dt class="text-xl">お取り寄せタウン</dt>
-                <dd class="mt-md font-sans text-gray">Service site</dd>
-              </dl>
-            </div>
-          </li>
-          <li class="mt-2xl">
-            <div class="max-w-[472px] min-w-[472px] w-full">
-              <div class="max-w-[472px] min-h-[292px] bg-gray rounded" />
-              <dl class="mt-lg">
-                <dt class="text-xl">alt.</dt>
-                <dd class="mt-md font-sans text-gray">Portfolio site</dd>
-              </dl>
-            </div>
-          </li>
-        </ul>
+        <div class="max-w-5xl pt-14 mx-auto">
+          <ul class="flex justify-between">
+            <li>
+              <div class="max-w-[472px] min-w-[472px] w-full">
+                <div class="max-w-[472px] min-h-[292px] bg-gray rounded" />
+                <dl class="mt-lg">
+                  <dt class="text-xl">お取り寄せタウン</dt>
+                  <dd class="mt-md font-sans text-gray">Service site</dd>
+                </dl>
+              </div>
+            </li>
+            <li class="mt-2xl">
+              <div class="max-w-[472px] min-w-[472px] w-full">
+                <div class="max-w-[472px] min-h-[292px] bg-gray rounded" />
+                <dl class="mt-lg">
+                  <dt class="text-xl">alt.</dt>
+                  <dd class="mt-md font-sans text-gray">Portfolio site</dd>
+                </dl>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
       <div class="mt-2xl text-center">
         <alt-link arrow underline size="xl" to="/">
@@ -204,11 +204,13 @@ export default Vue.extend({
   },
   mounted() {
     const sectionContactRect = this.$refs.sectionContact as HTMLElement
-    const rect = sectionContactRect.getBoundingClientRect()
 
     window.addEventListener('scroll', () => {
-      this.rotateDeg = window.pageYOffset * -0.25
-      if (window.pageYOffset + window.innerHeight > rect.top + rect.height) {
+      const rect = sectionContactRect.getBoundingClientRect()
+      this.rotateDeg = window.pageYOffset * 0.25
+      const bottomOfWindow = window.innerHeight
+      const bottomOfElem = rect.top + rect.height
+      if (bottomOfWindow > bottomOfElem && !this.planeLanded) {
         this.planeLanded = true
       }
     })

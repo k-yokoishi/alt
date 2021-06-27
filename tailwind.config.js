@@ -13,6 +13,14 @@ module.exports = {
       ],
       sans: ['"Josefin Sans"'],
     },
+    fontSize: {
+      xs: ['0.75rem', '1.6'],
+      sm: ['0.875rem', '1.6'],
+      base: ['1rem', '1.6'],
+      lg: ['1.125rem', '1.6'],
+      xl: ['1.25rem', '1.6'],
+      '2xl': ['1.5rem', '1.6'],
+    },
     colors: {
       black: {
         DEFAULT: '#1A2C44',
@@ -38,6 +46,9 @@ module.exports = {
         xl: '32px',
         '2xl': '40px',
         '3xl': '48px',
+      },
+      lineHeight: {
+        base: 1.6,
       },
     },
   },

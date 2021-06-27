@@ -1,4 +1,7 @@
 export default {
+  server: {
+    host: '0.0.0.0',
+  },
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
@@ -39,5 +42,10 @@ export default {
   modules: [],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    extractCSS: true,
+  },
+  generate: {
+    subFolders: false,
+  },
 }

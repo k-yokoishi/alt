@@ -157,6 +157,7 @@
               absolute
               top-1/2
               left-1/2
+              duration-300
               transform
               -translate-x-1/2 -translate-y-1/2
             "
@@ -254,7 +255,7 @@ export default Vue.extend({
 <style lang="scss">
 .mv {
   &__inner {
-    @apply relative flex flex-col justify-center mx-2xl md:mx-[90px] min-h-[520px] md:min-h-[712px];
+    @apply relative flex flex-col justify-center mx-2xl pb-2xl md:pb-0 md:mx-[90px] min-h-[480px] md:min-h-[712px];
   }
 
   &__graphicImage {
@@ -354,7 +355,6 @@ export default Vue.extend({
   background-size: cover;
 
   &__airplane {
-    transition-duration: 300ms;
     &.planeLanded {
       @apply transform translate-x-[64px] translate-y-[-96px] md:translate-x-[124px] md:translate-y-[-156px];
     }

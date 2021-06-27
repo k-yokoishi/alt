@@ -42,9 +42,9 @@ export default {
   modules: [],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {
-    extractCSS: true,
-  },
+  // build: {
+  //   extractCSS: true,
+  // },
   generate: {
     subFolders: false,
   },

@@ -1,6 +1,8 @@
 <template>
   <header class="relative h-16 md:static md:h-auto">
-    <div class="absolute w-full px-2xl md:px-20 py-4 duration-100 z-20">
+    <div
+      class="absolute md:static w-full px-2xl md:px-20 py-4 duration-100 z-20"
+    >
       <div class="flex justify-between items-center">
         <div class="w-16 md:w-[75px]">
           <NuxtLink to="/">
@@ -43,8 +45,8 @@
     </div>
     <transition name="fade">
       <div
-        v-if="menuActive"
-        class="absolute fixed top-0 bg-black w-screen h-full z-10"
+        v-show="menuActive"
+        class="fixed top-0 bg-black w-screen h-full z-10"
       >
         <nav class="flex items-center justify-center h-full">
           <ul class="flex flex-col items-center">
@@ -121,7 +123,7 @@ export default Vue.extend({
       @apply bg-base;
 
       &:nth-child(1) {
-        @apply transform rotate-45 top-1/2;
+        @apply transform translate-y-[10px] rotate-45;
       }
 
       &:nth-child(2) {
@@ -129,7 +131,7 @@ export default Vue.extend({
       }
 
       &:nth-child(3) {
-        @apply transform -rotate-45 top-1/2;
+        @apply transform translate-y-[-10px] -rotate-45;
       }
     }
   }
@@ -151,11 +153,4 @@ export default Vue.extend({
 .switch-leave-to {
   @apply opacity-0;
 }
-//.switch-enter,
-//.switch-leave-to {
-//  @apply opacity-0;
-//}
-//.switch-leave-active {
-//  position: absolute;
-//}
 </style>

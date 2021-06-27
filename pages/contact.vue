@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <alt-container>
     <iframe
       id="hidden_iframe"
       name="hidden_iframe"
@@ -47,7 +47,7 @@
         </div>
       </form>
     </div>
-  </div>
+  </alt-container>
 </template>
 
 <script lang="ts">

@@ -1,10 +1,13 @@
 <template>
   <section class="pt-3xl pb-16">
     <header class="text-center">
-      <div v-if="subTitle" class="text-gray font-sans text-xl pb-md">
+      <div
+        v-if="subTitle"
+        class="text-sm md:text-base text-gray font-sans text-xl pb-sm md:pb-md"
+      >
         {{ subTitle }}
       </div>
-      <component :is="variant" class="text-[2rem] font-bold">
+      <component :is="variant" class="text-2xl md:text-[2rem] font-bold">
         {{ title }}
       </component>
     </header>

@@ -1,10 +1,10 @@
 <template>
   <footer class="bg-black">
     <div class="px-[90px] pt-xl pb-sm relative">
-      <div class="absolute max-w-[75px]">
+      <div class="mx-auto md:absolute w-16 md:w-[75px]">
         <img src="../assets/images/logo_dark.svg" alt="alt." />
       </div>
-      <nav class="text-white mx-auto">
+      <nav class="hidden md:block text-white mx-auto">
         <ul class="flex items-center justify-center font-sans">
           <li v-for="nav in navs" :key="nav.to" class="mx-lg">
             <alt-link :to="nav.to">{{ nav.label }}</alt-link>
@@ -50,9 +50,3 @@ export default Vue.extend({
   },
 })
 </script>
-
-<style>
-.global-header-log {
-  width: 75px;
-}
-</style>

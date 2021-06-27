@@ -1,6 +1,5 @@
 <template>
   <NuxtLink
-    is="a"
     :to="to"
     class="altLink hover:opacity-80 relative"
     :class="rootClasses"
@@ -52,10 +51,8 @@ $spaceToUnderline: 6px;
   @apply cursor-pointer;
 
   &__arrow {
-    height: 20px;
-    width: 22px;
     top: $spaceToUnderline * -0.5;
-    @apply absolute ml-sm top-0 transition-transform duration-100;
+    @apply absolute ml-sm top-0 transition-transform duration-100 h-[20px] w-[14px] md:w-[22px];
 
     &::before,
     &::after {
@@ -69,10 +66,8 @@ $spaceToUnderline: 6px;
       @apply w-full bg-black top-1/2;
     }
     &::after {
-      width: 12px;
-      height: 12px;
       transform: translateY(-50%) rotate(45deg);
-      @apply border-r-2 border-t-2 border-black top-1/2 right-0;
+      @apply border-r-2 border-t-2 border-black top-1/2 right-0 w-[10px] md:w-[12px] h-[10px] md:h-[12px];
     }
   }
 

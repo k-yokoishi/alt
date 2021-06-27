@@ -1,7 +1,17 @@
 <template>
-  <div class="pb-[80px]">
+  <div class="md:pb-20">
     <div class="mv relative overflow-hidden">
-      <div class="mv__graphics w-full max-w-[616px] absolute top-xl right-xl">
+      <div
+        class="
+          mv__graphics
+          w-full
+          max-w-[616px]
+          absolute
+          top-xl
+          -right-40
+          md:right-xl
+        "
+      >
         <div
           v-for="graphic in graphicImageSrc"
           :key="graphic"
@@ -11,15 +21,17 @@
         </div>
       </div>
       <div class="mv__inner">
-        <p class="text-[44px] font-bold leading-[70px]">
-          私たちは設計・デザイン・実装まで<br />夫婦でおこなうWeb制作チームです。
+        <p class="text-2xl md:text-[44px] font-bold">
+          私たちは設計・デザイン・実装まで<br
+            class="hidden md:block"
+          />夫婦でおこなうWeb制作チームです。
         </p>
-        <div class="mv__catchLead mt-lg text-sm text-gray font-sans">
+        <div class="mt-md md:mt-lg text-xs md:text-xl text-gray font-sans">
           Direction / UI Design / Web Design / Development
         </div>
-        <div class="mv__linkToAbout mt-2xl">
-          <alt-link to="/about" underline arrow size="xl">
-            <span class="font-sans">ABOUT US</span>
+        <div class="mv__linkToAbout mt-xl md:mt-2xl">
+          <alt-link to="/about" underline arrow>
+            <span class="font-sans text-base md:text-xl">ABOUT US</span>
           </alt-link>
         </div>
         <div class="scrollDown">
@@ -44,23 +56,29 @@
       </div>
     </div>
     <alt-section title="私たちができること" sub-title="SERVICE">
-      <div class="max-w-5xl w-full mx-auto">
-        <ul class="flex justify-between">
-          <li v-for="service in services" :key="service.title">
-            <div class="flex flex-col items-center max-w-[315px]">
+      <alt-container>
+        <ul class="flex flex-col md:flex-row justify-between -mt-xl -ml-5">
+          <li
+            v-for="service in services"
+            :key="service.title"
+            class="mt-xl ml-5"
+          >
+            <div class="flex flex-col items-center">
               <figure class="height-[160px] w-auto">
                 <img :src="service.iconSrc" alt="" />
               </figure>
               <dl class="mt-lg">
-                <dt class="text-2xl font-bold text-center">
+                <dt class="text-xl md:text-2xl font-bold text-center">
                   {{ service.title }}
                 </dt>
-                <dd class="mt-md leading-[26px]">{{ service.description }}</dd>
+                <dd class="mt-md text-sm md:text-base">
+                  {{ service.description }}
+                </dd>
               </dl>
             </div>
           </li>
         </ul>
-      </div>
+      </alt-container>
       <div class="mt-2xl text-center">
         <alt-link arrow underline size="xl" to="/">
           <span class="font-sans">VIEW MORE</span>
@@ -82,41 +100,54 @@
         >
           FEATURED WORKS
         </div>
-        <div class="max-w-5xl pt-14 mx-auto">
-          <ul class="flex justify-between">
-            <li>
-              <div class="max-w-[472px] min-w-[472px] w-full">
-                <div class="max-w-[472px] min-h-[292px] bg-gray rounded" />
-                <dl class="mt-lg">
-                  <dt class="text-xl">お取り寄せタウン</dt>
-                  <dd class="mt-md font-sans text-gray">Service site</dd>
-                </dl>
-              </div>
-            </li>
-            <li class="mt-2xl">
-              <div class="max-w-[472px] min-w-[472px] w-full">
-                <div class="max-w-[472px] min-h-[292px] bg-gray rounded" />
-                <dl class="mt-lg">
-                  <dt class="text-xl">alt.</dt>
-                  <dd class="mt-md font-sans text-gray">Portfolio site</dd>
-                </dl>
-              </div>
-            </li>
-          </ul>
-        </div>
+        <alt-container>
+          <div class="md:pt-14">
+            <ul class="flex justify-around flex-col md:flex-row">
+              <li class="flex-grow">
+                <div>
+                  <div class="max-w-[472px] min-h-[292px] bg-gray rounded" />
+                  <dl class="mt-lg">
+                    <dt class="text-xl">お取り寄せタウン</dt>
+                    <dd class="mt-md font-sans text-gray text-sm md:text-base">
+                      Service site
+                    </dd>
+                  </dl>
+                </div>
+              </li>
+              <li class="flex-grow mt-xl md:mt-2xl">
+                <div>
+                  <div class="max-w-[472px] min-h-[292px] bg-gray rounded" />
+                  <dl class="mt-lg">
+                    <dt class="text-xl">alt.</dt>
+                    <dd class="mt-md font-sans text-gray text-sm md:text-base">
+                      Portfolio site
+                    </dd>
+                  </dl>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </alt-container>
       </div>
       <div class="mt-2xl text-center">
         <alt-link arrow underline size="xl" to="/">
-          <span class="font-sans">VIEW MORE</span>
+          <span class="font-sans text-base md:text-xl">VIEW MORE</span>
         </alt-link>
       </div>
     </alt-section>
     <section
       ref="sectionContact"
-      class="sectionContact mt-[172px] mx-[90px] rounded-xl relative"
+      class="
+        sectionContact
+        mt-28
+        md:mt-[172px]
+        md:mx-[90px]
+        md:rounded-xl
+        relative
+      "
     >
-      <div class="absolute -top-16 left-24">
-        <div class="relative w-40 h-40">
+      <div class="absolute -top-16 left-4 md:left-24">
+        <div class="relative w-[120px] h-[120px] md:w-40 md:h-40">
           <div class="absolute">
             <img src="../assets/images/contact_airplane_circle.png" alt="" />
           </div>
@@ -140,13 +171,15 @@
           <h2>CONTACT</h2>
         </header>
         <main class="mt-md">
-          <p>
-            Web制作やクリエイティブに関するお困りごとがあれば<br />
+          <p class="text-sm md:text-base">
+            Web制作やクリエイティブに関する<br
+              class="md:hidden"
+            />お困りごとがあれば<br />
             まずはお気軽にお問い合わせください。
           </p>
         </main>
         <footer class="mt-lg flex justify-center">
-          <alt-button rounded>お問い合わせはこちら</alt-button>
+          <alt-button to="/contact" rounded>お問い合わせはこちら</alt-button>
         </footer>
       </div>
     </section>
@@ -179,7 +212,7 @@ export default Vue.extend({
         {
           title: 'デザイン',
           description:
-            '「売上を上げたい」「サービスのイメージアップをしたい」などお客様のご要望をお伺いした上で、Webサイトの目的が実現できるデザインをご提案します',
+            '「売上を上げたい」「サービスのイメージアップをしたい」などお客様のご要望をお伺いした上で、Webサイトの目的が実現できるデザインをご提案いたします。',
           iconSrc: require('../assets/images/icon_design.png'),
         },
         {
@@ -221,15 +254,9 @@ export default Vue.extend({
 <style lang="scss">
 .mv {
   &__inner {
-    min-height: 712px;
-    margin-left: 90px;
-    margin-right: 90px;
-    @apply relative flex flex-col justify-center;
+    @apply relative flex flex-col justify-center mx-2xl md:mx-[90px] min-h-[520px] md:min-h-[712px];
   }
 
-  &__catchLead {
-    font-size: 20px;
-  }
   &__graphicImage {
     animation-name: rotateAndAppear;
     animation-duration: 10s;
@@ -272,10 +299,7 @@ export default Vue.extend({
 }
 
 .scrollDown {
-  position: absolute;
-  bottom: 72px;
-  right: 0;
-  max-width: 160px;
+  @apply absolute bottom-0 -right-8 md:right-0 md:bottom-[72px] max-w-[160px] transform scale-75 md:scale-100;
 
   &__arrow {
     &::before {
@@ -303,8 +327,8 @@ export default Vue.extend({
   }
 
   &__circle {
-    width: 100%;
     transition: 75ms cubic-bezier(0.2, 0, 0.8, 1);
+    @apply w-full;
   }
 }
 .sectionWorks__bg {
@@ -332,7 +356,7 @@ export default Vue.extend({
   &__airplane {
     transition-duration: 300ms;
     &.planeLanded {
-      transform: translate(124px, -156px);
+      @apply transform translate-x-[64px] translate-y-[-96px] md:translate-x-[124px] md:translate-y-[-156px];
     }
   }
 }

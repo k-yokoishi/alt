@@ -18,6 +18,6 @@ export default {
 
 <style>
 body {
-  @apply font-body text-black bg-base;
+  @apply font-body text-black leading-base bg-base;
 }
 </style>

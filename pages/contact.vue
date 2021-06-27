@@ -96,14 +96,13 @@ export default Vue.extend({
   }
 }
 .field-label {
-  width: 160px;
+  @apply w-40;
 }
 .field-input {
   @apply ml-4;
 }
 .input,
 .textarea {
-  max-width: 240px;
-  @apply border border-gray w-full;
+  @apply border border-gray w-full max-w-[240px];
 }
 </style>

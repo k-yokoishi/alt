@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-16 md:mt-24 md:pb-20">
+  <div class="mt-24 md:pb-20">
     <alt-page title="ABOUT" sub-title="私たちについて">
       <section>
         <alt-container>

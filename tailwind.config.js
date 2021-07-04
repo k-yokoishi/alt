@@ -33,6 +33,9 @@ module.exports = {
       gray: {
         DEFAULT: '#848D9A',
       },
+      red: {
+        DEFAULT: '#C41414',
+      },
     },
     borderColor: {
       DEFAULT: '#C7CBD1',
@@ -58,6 +61,7 @@ module.exports = {
         base: 1.6,
       },
       maxWidth: {
+        sm: `${640 + 80 * 2}px`,
         lg: `${1024 + 80 * 2}px`,
         xl: `${1280 + 80 * 2}px`,
       },

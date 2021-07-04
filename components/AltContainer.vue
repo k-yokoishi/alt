@@ -7,6 +7,8 @@
 <script lang="ts">
 import Vue from 'vue'
 
+type ContainerSize = 'sm' | 'md' | 'lg'
+
 export default Vue.extend({
   props: {
     size: {
@@ -20,9 +22,19 @@ export default Vue.extend({
   },
   computed: {
     classes() {
+      const getSizeClass = (size: ContainerSize) => {
+        switch (size) {
+          case 'sm':
+            return 'md:max-w-sm'
+          case 'lg':
+            return 'md:max-w-xl'
+          default:
+            return 'md:max-w-lg'
+        }
+      }
       return [
         { 'px-2xl': !this.spFull },
-        this.size === 'md' ? `md:max-w-lg` : `md:max-w-xl`,
+        getSizeClass(this.size as ContainerSize),
       ]
     },
   },

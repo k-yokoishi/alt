@@ -4,7 +4,7 @@
     :to="to"
     active-class="border"
     class="button"
-    :class="{ rounded }"
+    :class="classes"
   >
     <slot />
   </NuxtLink>
@@ -12,7 +12,7 @@
     v-else
     class="button"
     :type="type"
-    :class="{ rounded }"
+    :class="classes"
     :disabled="disabled"
     @click="handleClick"
   >
@@ -27,8 +27,17 @@ export default Vue.extend({
   props: {
     to: { type: String, default: '' },
     rounded: { type: Boolean, default: false },
+    full: { type: Boolean, default: false },
     disabled: { type: Boolean, default: false },
     type: { type: String, default: 'button' },
+  },
+  computed: {
+    classes() {
+      return [
+        this.rounded ? 'rounded-full' : 'rounded',
+        { 'w-full': this.full },
+      ]
+    },
   },
   methods: {
     handleClick() {
@@ -40,10 +49,6 @@ export default Vue.extend({
 
 <style scoped lang="scss">
 .button {
-  @apply py-md px-xl text-white bg-black rounded block text-center hover:opacity-80 duration-100;
-
-  &.rounded {
-    @apply rounded-full;
-  }
+  @apply py-md px-xl text-white bg-black block text-center hover:opacity-80 duration-100 leading-none;
 }
 </style>

@@ -88,6 +88,7 @@ $spaceToUnderline: 6px;
     }
   }
 
+  &.nuxt-link-active,
   &.withUnderline {
     &::before {
       @apply w-full;

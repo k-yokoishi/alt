@@ -103,6 +103,6 @@ export default Vue.extend({
 }
 .input,
 .textarea {
-  @apply border border-gray w-full max-w-[240px];
+  @apply border  w-full max-w-[240px];
 }
 </style>

@@ -20,6 +20,8 @@ module.exports = {
       lg: ['1.125rem', '1.6'],
       xl: ['1.25rem', '1.6'],
       '2xl': ['1.5rem', '1.6'],
+      h1: ['3rem', '1'],
+      h2: ['2rem', '1'],
     },
     colors: {
       black: {
@@ -32,9 +34,14 @@ module.exports = {
         DEFAULT: '#848D9A',
       },
     },
+    borderColor: {
+      DEFAULT: '#C7CBD1',
+      black: '#1A2C44',
+    },
     backgroundColor: {
       gray: '#E5E5E5',
       black: '#1A2C44',
+      white: '#FFFFFF',
       base: '#F4F7F6',
     },
     extend: {
@@ -49,6 +56,10 @@ module.exports = {
       },
       lineHeight: {
         base: 1.6,
+      },
+      maxWidth: {
+        lg: `${1024 + 80 * 2}px`,
+        xl: `${1280 + 80 * 2}px`,
       },
     },
   },

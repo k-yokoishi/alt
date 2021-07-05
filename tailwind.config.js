@@ -40,6 +40,8 @@ module.exports = {
     borderColor: {
       DEFAULT: '#C7CBD1',
       black: '#1A2C44',
+      white: '#FFFFFF',
+      transparent: 'transparent',
     },
     backgroundColor: {
       gray: '#E5E5E5',

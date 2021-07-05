@@ -106,6 +106,9 @@ export default Vue.extend({
 <style lang="scss" scoped>
 .input,
 .textarea {
-  @apply w-full p-[12px];
+  @apply w-full p-[12px] rounded outline-none border border-transparent;
+  &:focus {
+    @apply border-black;
+  }
 }
 </style>

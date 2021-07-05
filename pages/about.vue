@@ -46,16 +46,11 @@
                       </dl>
                     </div>
                     <div class="mt-xl">
-                      <dl class="relative">
-                        <dt class="absolute left-4 -top-4 text-xl font-sans">
-                          Skill
-                        </dt>
-                        <dd class="px-md py-5 bg-white rounded-lg">
-                          <span class="font-sm">
-                            {{ profile.skills }}
-                          </span>
-                        </dd>
-                      </dl>
+                      <alt-box title="Skill">
+                        <span class="text-sm">
+                          {{ profile.skills }}
+                        </span>
+                      </alt-box>
                     </div>
                   </div>
                 </li>
@@ -143,7 +138,7 @@ export default Vue.extend({
     }
   },
   head: {
-    title: 'About',
+    title: '私たちについて',
   },
 })
 </script>

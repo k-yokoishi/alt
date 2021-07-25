@@ -3,7 +3,7 @@
     <header class="text-center">
       <div
         v-if="subTitle"
-        class="text-sm md:text-base text-gray font-sans text-xl pb-sm md:pb-md"
+        class="text-xs md:text-base text-gray font-sans text-xl pb-sm md:pb-md"
       >
         {{ subTitle }}
       </div>

@@ -106,11 +106,7 @@ export default Vue.extend({
           lead: '名刺代わりの規模でWebサイトを作りたい方におすすめ',
           price: '200,000',
           priceIsYen: true,
-          structure: `トップページ
-└ お知らせ
-└ 下層1ページ
-└ 問い合わせ
-└ プライバシーポリシー`,
+          structure: `トップページ\n└ お知らせ\n └ 下層1ページ\n└ 問い合わせ\n└ プライバシーポリシー`,
           features: ['Wordpress更新機能あり', 'レスポンシブ対応'],
         },
         {
@@ -118,11 +114,7 @@ export default Vue.extend({
           lead: 'パンフレット代わりの規模でWebサイトを作りたい方におすすめ',
           price: '300,000',
           priceIsYen: true,
-          structure: `トップページ
-└ お知らせ
-└ 下層1ページ
-└ 問い合わせ
-└ プライバシーポリシー`,
+          structure: `トップページ\n└ お知らせ\n└ 下層3ページ\n└ 問い合わせ\n└ プライバシーポリシー`,
           features: ['Wordpress更新機能あり', 'レスポンシブ対応'],
         },
         {
@@ -187,7 +179,7 @@ export default Vue.extend({
   }
   &::after {
     content: '';
-    @apply w-[12px] h-[8px] border-b-2 border-l-2 border-white transform translate-x-1/2 -rotate-45 top-1/4;
+    @apply w-[12px] h-[8px] border-b-2 border-l-2 border-white transform translate-x-1/2 -rotate-45 top-[6px];
   }
 }
 </style>

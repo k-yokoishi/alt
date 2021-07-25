@@ -5,7 +5,7 @@
         {{ title }}
       </component>
     </header>
-    <main class="mt-lg md:mt-0">
+    <main class="mt-lg lg:mt-0">
       <slot />
     </main>
   </section>

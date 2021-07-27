@@ -49,6 +49,6 @@ export default Vue.extend({
 
 <style scoped lang="scss">
 .button {
-  @apply py-md px-xl text-white bg-black block text-center hover:opacity-80 duration-100 leading-none;
+  @apply py-md px-xl text-white bg-black text-center hover:opacity-80 duration-100 leading-none;
 }
 </style>

@@ -45,8 +45,8 @@
     </div>
     <transition name="fade">
       <div
-        v-show="menuActive"
-        class="fixed top-0 bg-black w-screen h-full z-10"
+        v-if="menuActive"
+        class="fixed top-0 bg-black w-screen h-screen z-10"
       >
         <nav class="flex items-center justify-center h-full">
           <ul class="flex flex-col items-center">
@@ -98,7 +98,7 @@ export default Vue.extend({
 })
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .headerMenu {
   @apply relative w-lg h-[22px];
 

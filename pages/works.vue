@@ -6,7 +6,9 @@
           <ul class="flex justify-around flex-col md:flex-row">
             <li class="flex-grow">
               <div>
-                <div class="max-w-[472px] min-h-[292px] bg-gray rounded" />
+                <div class="max-w-[472px] md:min-h-[292px] rounded">
+                  <img src="../assets/images/works_alt.png" alt="alt." />
+                </div>
                 <dl class="mt-lg">
                   <dt class="text-xl">alt.</dt>
                   <dd class="mt-md font-sans text-gray text-sm md:text-base">
@@ -32,14 +34,3 @@ export default Vue.extend({
   },
 })
 </script>
-
-<style lang="scss">
-.fade-enter-active,
-.fade-leave-active {
-  transition: 0.5s;
-}
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-  //opacity: 0;
-  transform: scale(0);
-}
-</style>

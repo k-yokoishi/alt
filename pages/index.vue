@@ -105,18 +105,9 @@
             <ul class="flex justify-around flex-col md:flex-row">
               <li class="flex-grow">
                 <div>
-                  <div class="max-w-[472px] min-h-[292px] bg-gray rounded" />
-                  <dl class="mt-lg">
-                    <dt class="text-xl">お取り寄せタウン</dt>
-                    <dd class="mt-md font-sans text-gray text-sm md:text-base">
-                      Service site
-                    </dd>
-                  </dl>
-                </div>
-              </li>
-              <li class="flex-grow mt-xl md:mt-2xl">
-                <div>
-                  <div class="max-w-[472px] min-h-[292px] bg-gray rounded" />
+                  <div class="max-w-[472px] md:min-h-[292px] rounded">
+                    <img src="../assets/images/works_alt.png" alt="alt." />
+                  </div>
                   <dl class="mt-lg">
                     <dt class="text-xl">alt.</dt>
                     <dd class="mt-md font-sans text-gray text-sm md:text-base">
@@ -130,7 +121,7 @@
         </alt-container>
       </div>
       <div class="mt-2xl text-center">
-        <alt-link arrow underline size="xl" to="/">
+        <alt-link arrow underline size="xl" to="/works">
           <span class="font-sans text-base md:text-xl">VIEW MORE</span>
         </alt-link>
       </div>
@@ -152,7 +143,6 @@ export default Vue.extend({
         require('../assets/images/mv_graphic_01.png'),
         require('../assets/images/mv_graphic_02.png'),
         require('../assets/images/mv_graphic_03.png'),
-        require('../assets/images/mv_graphic_04.png'),
       ],
       services: [
         {
@@ -203,18 +193,15 @@ export default Vue.extend({
 
   &__graphicImage {
     animation-name: rotateAndAppear;
-    animation-duration: 10s;
+    animation-duration: 9s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
     @apply absolute blur-xl;
     &:nth-child(2) {
-      animation-delay: -2.5s;
+      animation-delay: -3s;
     }
     &:nth-child(3) {
-      animation-delay: -5s;
-    }
-    &:nth-child(4) {
-      animation-delay: -7.5s;
+      animation-delay: -6s;
     }
   }
 }

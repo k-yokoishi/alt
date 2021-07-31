@@ -6,10 +6,11 @@
           mv__graphics
           w-full
           max-w-[616px]
+          md:max-w-[800px]
           absolute
           top-xl
           -right-40
-          md:right-xl
+          md:top-[-70px] md:-right-14
         "
       >
         <div
@@ -21,7 +22,7 @@
         </div>
       </div>
       <div class="mv__inner">
-        <p class="text-2xl md:text-[44px] font-bold">
+        <p class="text-2xl md:text-[34px] lg:text-[44px] font-bold">
           私たちは設計・デザイン・実装まで<br
             class="hidden md:block"
           />夫婦でおこなうWeb制作チームです。
@@ -200,6 +201,7 @@ export default Vue.extend({
     &:nth-child(2) {
       animation-delay: -3s;
     }
+
     &:nth-child(3) {
       animation-delay: -6s;
     }
@@ -262,6 +264,7 @@ export default Vue.extend({
     @apply w-full;
   }
 }
+
 .sectionWorks__bg {
   z-index: -1;
   transform: translateX(100%);
@@ -270,6 +273,7 @@ export default Vue.extend({
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
+
 @keyframes fadeInOut {
   from {
     transform: translateX(100%);

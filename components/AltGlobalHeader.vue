@@ -4,7 +4,7 @@
       class="absolute md:static w-full px-2xl md:px-20 py-4 duration-100 z-20"
     >
       <div class="flex justify-between items-center">
-        <div class="w-16 md:w-[75px]">
+        <div class="w-16 md:w-[75px]" @click="menuActive = false">
           <NuxtLink to="/">
             <transition name="switch">
               <img

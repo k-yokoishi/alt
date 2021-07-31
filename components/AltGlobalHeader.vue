@@ -48,7 +48,7 @@
         v-if="menuActive"
         class="fixed top-0 bg-black w-screen h-screen z-10"
       >
-        <nav class="flex items-center justify-center h-full">
+        <nav class="flex items-center justify-center h-full" @click="menuActive = false">
           <ul class="flex flex-col items-center">
             <li v-for="nav in navs" :key="nav.to" class="my-6">
               <alt-link :to="nav.to">

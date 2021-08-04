@@ -53,9 +53,6 @@ export default Vue.extend({
       planeLanded: false,
     }
   },
-  head: {
-    title: 'トップ',
-  },
   mounted() {
     const sectionContactRect = this.$refs.sectionContact as HTMLElement
 

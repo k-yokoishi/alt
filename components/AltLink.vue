@@ -4,6 +4,7 @@
     class="altLink hover:opacity-80 relative"
     :class="rootClasses"
   >
+    <i v-if="backArrow" class="altLink__backArrow" />
     <slot />
     <i v-if="arrow" class="altLink__arrow" />
   </NuxtLink>
@@ -23,6 +24,10 @@ export default Vue.extend({
       default: false,
     },
     arrow: {
+      type: Boolean,
+      default: false,
+    },
+    backArrow: {
       type: Boolean,
       default: false,
     },
@@ -78,9 +83,34 @@ $spaceToUnderline: 6px;
     @apply absolute block bottom-0 w-0 bg-black duration-100 left-1/2;
   }
 
+  &__backArrow {
+    top: $spaceToUnderline * -0.5;
+    @apply absolute mr-sm top-0 transition-transform duration-100 h-[20px] w-[14px] md:w-[22px];
+
+    &::before,
+    &::after {
+      content: '';
+      @apply absolute block;
+    }
+
+    &::before {
+      height: 2px;
+      transform: translateY(-50%);
+      @apply w-full bg-black top-1/2 left-[-24px] md:left-[-32px];
+    }
+    &::after {
+      transform: translateY(-50%) rotate(45deg);
+      @apply border-l-2 border-b-2 border-black top-1/2 left-[-24px] md:left-[-32px] w-[10px] md:w-[12px] h-[10px] md:h-[12px];
+    }
+  }
+
   &:hover {
     .altLink__arrow {
       transform: translateX(4px);
+      @apply opacity-80;
+    }
+    .altLink__backArrow {
+      transform: translateX(-4px);
       @apply opacity-80;
     }
     &::before {

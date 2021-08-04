@@ -107,7 +107,7 @@
               <li class="flex-grow">
                 <div>
                   <div class="max-w-[472px] md:min-h-[292px] rounded">
-                    <img src="../assets/images/works_alt.png" alt="alt." />
+                    <img src="../assets/images/works_alt.jpg" alt="alt." />
                   </div>
                   <dl class="mt-lg">
                     <dt class="text-xl">alt.</dt>

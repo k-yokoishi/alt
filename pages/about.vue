@@ -31,8 +31,8 @@
                   class="ml-2xl mt-xl w-full"
                 >
                   <div>
-                    <div class="min-h-[244px] w-full rounded-lg bg-gray" />
-                    <div class="mt-lg">
+                    <!-- <div class="min-h-[244px] w-full rounded-lg bg-gray" /> -->
+                    <div>
                       <dl>
                         <dt>
                           <div class="text-sm text-gray font-sans">

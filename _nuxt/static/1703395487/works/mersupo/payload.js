@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/works/mersupo", {data:[{}],fetch:{},mutations:void 0});

@@ -1,6 +1,6 @@
 <template>
   <section class="horizontalSection flex flex-col lg:flex-row">
-    <header>
+    <header v-if="title">
       <component :is="variant" class="font-sans text-2xl min-w-[160px]">
         {{ title }}
       </component>

@@ -8,7 +8,10 @@
               <h2 class="text-4xl">{{ title }}</h2>
             </header>
             <main class="mt-2xl">
-              <figure class="max-full rounded">
+              <figure
+                v-if="mvImageSrc"
+                class="max-full rounded overflow-hidden"
+              >
                 <img :src="mvImageSrc" alt="alt." />
               </figure>
               <div class="md:flex mt-lg md:mt-16">
@@ -29,6 +32,15 @@
                   "
                 >
                   <ul>
+                    <li>
+                      <dl>
+                        <dt class="text-gray font-bold leading-none">URL</dt>
+                        <dd class="mt-sm leading-none">
+                          <alt-link :href="url">{{ url }}</alt-link>
+                          <!-- <a :href="url" target="_blank">{{ url }}</a> -->
+                        </dd>
+                      </dl>
+                    </li>
                     <li
                       v-for="detail in details"
                       :key="detail.label"
@@ -62,8 +74,10 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import AltLink from '~/components/AltLink.vue'
 
 export default Vue.extend({
+  components: { AltLink },
   props: {
     title: { type: String, required: true },
     desc: { type: String, required: true },
@@ -72,14 +86,15 @@ export default Vue.extend({
     category: { type: String, default: '' },
     skills: { type: String, default: '' },
     productionPeriod: { type: String, default: '' },
+    price: { type: String, default: '' },
   },
   computed: {
     details() {
       return [
-        { label: 'URL', value: this.url },
         { label: 'カテゴリー', value: this.category },
         { label: '担当', value: this.skills },
         { label: '製作期間', value: this.productionPeriod },
+        { label: '金額', value: this.price },
       ]
     },
   },

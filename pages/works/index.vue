@@ -3,7 +3,7 @@
     <alt-page title="WORKS" sub-title="制作事例">
       <div class="mt-16">
         <alt-container>
-          <ul class="flex flex-col md:flex-row">
+          <ul class="flex flex-col md:flex-row gap-6">
             <li v-for="work in works" :key="work.title">
               <nuxt-link :to="work.to">
                 <div class="duration-100 hover:opacity-80">
@@ -39,6 +39,12 @@ export default Vue.extend({
           desc: 'Portfolio site',
           to: '/works/alt',
           thumbnailImage: require('../../assets/images/works_alt.jpg'),
+        },
+        {
+          title: 'メルサポ',
+          desc: 'メルカリ出品のサポートツール',
+          to: '/works/mersupo',
+          thumbnailImage: require('../../assets/images/works_mersupo.png'),
         },
       ],
     }

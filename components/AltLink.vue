@@ -1,13 +1,16 @@
 <template>
-  <NuxtLink
+  <component
+    :is="component"
+    :href="href"
     :to="to"
+    :target="target"
     class="altLink hover:opacity-80 relative"
     :class="rootClasses"
   >
     <i v-if="backArrow" class="altLink__backArrow" />
     <slot />
     <i v-if="arrow" class="altLink__arrow" />
-  </NuxtLink>
+  </component>
 </template>
 
 <script lang="ts">
@@ -18,6 +21,14 @@ export default Vue.extend({
     to: {
       required: true,
       type: String,
+    },
+    href: {
+      required: true,
+      type: String,
+    },
+    target: {
+      type: String,
+      default: '_blank',
     },
     underline: {
       type: Boolean,
@@ -43,6 +54,9 @@ export default Vue.extend({
         { withUnderline: this.underline },
         `text-${this.size}`,
       ]
+    },
+    component() {
+      return this.href ? 'a' : 'nuxt-link'
     },
   },
 })

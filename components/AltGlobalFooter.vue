@@ -45,6 +45,10 @@ export default Vue.extend({
           label: 'CONTACT',
           to: '/contact',
         },
+        {
+          label: '特商法に基づく表記',
+          to: '/commerce-law',
+        },
       ],
     }
   },
